@@ -72,24 +72,19 @@ void print(QUEUE *Q)
 {
     for (int i = 0; i < Q->count; i++)
     {
-        cout << Q->item[(Q->front + i) % MAXQUEUE] << "\n";
+        cout << Q->item[(Q->front + i) % MAXQUEUE] << " ";
     }
 }
 
 int main()
 {
     inisialisasi(&antrian);
-    // Insert pasien pertama //
     insert(&antrian, 108);
-    // Insert pasien kedua //
     insert(&antrian, 109);
-    // Insert pasien ketiga //
     insert(&antrian, 110);
-    // Hapus pasien pertama //
-    hapus(&antrian);
-    // Insert pasien keempat //
     insert(&antrian, 111);
-
+    hapus(&antrian);
+    insert(&antrian, 112);
     print(&antrian);
 
     return 0;
